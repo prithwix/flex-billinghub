@@ -1,0 +1,27 @@
+.sidenav-container {
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 auto;
+}
+
+.container-fluid {
+    display: flex;
+    justify-content: end;
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100%;
+    padding: 0;
+}
+
+.box {
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    overflow: hidden;
+}
+
+#main-content {
+    transition: all 0.3s;
+}

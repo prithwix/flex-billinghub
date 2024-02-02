@@ -1,0 +1,13 @@
+<div class="box">
+    <app-header [user]="user"></app-header>
+    <div class="container-fluid">
+        <app-side-navbar></app-side-navbar>
+        <div class="ps-5 py-3" id="main-content">
+            <router-outlet *ngIf="isAuthenticated"></router-outlet>
+            <!-- to fix the bottom padding issue -->
+            <div style="height: 1rem;"></div>
+        </div>
+    </div>
+    <app-footer></app-footer>
+    <app-modal-overlay></app-modal-overlay>
+</div>

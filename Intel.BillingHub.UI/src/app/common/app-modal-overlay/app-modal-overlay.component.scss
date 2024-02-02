@@ -1,0 +1,13 @@
+.spinner-wrap .spinner {
+    position: fixed;
+    top: calc(50% - 6.25rem);
+    left: calc(50% - 2rem);
+    z-index: 10000;
+}
+
+.spinner-wrap {
+    /*  width: 100%;
+    height: 100%; */
+    top: 0;
+    left: 0;
+}

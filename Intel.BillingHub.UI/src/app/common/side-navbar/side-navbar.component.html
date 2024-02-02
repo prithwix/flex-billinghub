@@ -1,0 +1,15 @@
+<div class="custom-sidenav sidenav-dark" id="sidenav">
+    <nav class="nav flex-column">
+        <i class="intelicon-rewind-reverse icon" *ngIf="sideNav" (click)="closeNav()"></i>
+        <i class="intelicon-fast-forward icon" *ngIf="!sideNav" (click)="openNav()"></i>
+
+        <div [ngClass]="nav.active?'sidemenu-active':null" class="pb-5" style="cursor: pointer;"
+            *ngFor="let nav of sidenavMenuList">
+            <a [routerLink]="nav.path" class="nav-link" routerLinkActive="activate">
+                <i [ngClass]="nav.icon"></i>
+                <span [ngClass]="sideNav?'display-block':'display-none'" class="ms-1">{{nav.title}}</span>
+            </a>
+        </div>
+
+    </nav>
+</div>

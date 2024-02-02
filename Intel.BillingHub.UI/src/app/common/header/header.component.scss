@@ -1,0 +1,53 @@
+.username {
+    color: white;
+}
+.dropdown-item:focus,
+.dropdown-item:hover {
+    background-color: #0071c5;
+}
+
+.header-icon-size {
+    font-size: 2rem;
+}
+
+li {
+    align-self: center;
+}
+
+nav {
+    height: 4rem;
+    z-index: 1;
+}
+
+.fixed {
+    position: fixed;
+    width: 100%;
+    transition: 0.2s linear;
+    top: 0px;
+}
+
+.nofixed {
+    position: static;
+    transition: 0.2s linear;
+    top: -6rem;
+}
+
+.home-icon {
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: "IntelOne Display" !important;
+}
+
+.environment {
+    border: 1px solid;
+    height: 2rem;
+    line-height: 0;
+    width: 10rem;
+}
+.legacy-url {
+    color: #ffc599;
+}
+
+.bg-dark {
+    background-color: #343a40 !important;
+}

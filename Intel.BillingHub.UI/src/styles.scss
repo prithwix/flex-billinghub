@@ -1,0 +1,47 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@intc/dlux-bootstrap/dist/css/dlux.css";
+//custom css color codes
+@import "./variables";
+
+* {
+    font-family: "IntelOne Text", "Intel Clear";
+}
+
+html,
+body {
+    margin: 0;
+    height: 100%;
+}
+.k-grid .k-grid-header .k-table-th {
+    font-weight: 500;
+}
+
+.k-grid th,
+.k-treelist th {
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.125rem;
+}
+
+.k-grid td,
+.k-treelist td {
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.125rem;
+}
+
+.k-grid thead,
+.k-treelist thead {
+    background: linear-gradient(180deg, #f4f5f5 0%, #e9e9e9 100%);
+    //background-color: #e9e9e9;
+}
+
+.k-grid td,
+.k-grid th,
+.k-grid-content-locked td,
+.k-grid-content-locked th {
+    text-align: start;
+    border-color: $table-outline !important;
+    height: 2rem;
+    padding: 0.5rem !important;
+}

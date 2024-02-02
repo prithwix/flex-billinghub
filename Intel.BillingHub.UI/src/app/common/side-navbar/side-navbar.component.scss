@@ -1,0 +1,60 @@
+@import "./../../../variables";
+
+.custom-sidenav {
+    background: rgba(229, 229, 230, 0.52);
+    position: fixed;
+    left: 0;
+    overflow-x: hidden;
+}
+
+.sidenav-text {
+    text-align: center;
+    font-size: 13px;
+}
+.sidemenu-active {
+    color: white;
+    & i {
+        color: white;
+    }
+}
+
+.icon {
+    font-size: 1.25rem;
+    cursor: pointer;
+    align-self: flex-end;
+    padding: 0.5rem;
+    color: hsla(0, 0%, 100%, 0.5);
+}
+
+.nav-link {
+    color: hsla(0, 0%, 100%, 0.5);
+    text-align: center;
+    padding: 0;
+    i {
+        font-size: 3rem;
+    }
+}
+
+.nav-link:hover {
+    color: white;
+}
+
+.sidenav-dark {
+    background-color: #212529;
+}
+
+#sidenav {
+    transition: all 0.3s;
+}
+
+.display-block {
+    display: block;
+}
+
+.display-none {
+    display: none;
+}
+.display-block,
+.display-none {
+    transition: all 0.3s;
+}

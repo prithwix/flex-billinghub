@@ -1,0 +1,21 @@
+footer {
+    position: fixed;
+    height: 3rem;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 3px 3px;
+    border-top: 1px solid #b1babf;
+    background-color: #f6f8f8;
+    font-size: 0.8em;
+    color: #003c71;
+    z-index: 3;
+  }
+  footer div {
+    margin: 0 1.5rem;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  

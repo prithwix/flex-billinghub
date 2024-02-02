@@ -1,0 +1,66 @@
+<div class="row" *ngIf="jvFileValidtedByAPI">
+    <div class="col-6">
+        <kendo-chart>
+            <kendo-chart-series>
+                <kendo-chart-series-item type="column" [data]="monthlyAmountData" field="amount" categoryField="combo">
+                </kendo-chart-series-item>
+            </kendo-chart-series>
+        </kendo-chart>
+    </div>
+    <div class="col-6">
+        <kendo-chart>
+            <ng-template kendoChartDonutCenterTemplate>
+                <h3>{{rootData.length}}</h3>
+                {{rootData.length > 1 ? 'Invoices' : 'Invoice'}}
+                {{rootData.length ? (totalAmount | currency) : null}}
+            </ng-template>
+            <kendo-chart-series>
+                <kendo-chart-series-item type="donut" [data]="data1" categoryField="kind" field="share">
+                    <kendo-chart-series-item-labels [content]="labelContent" color="#fff" background="none">
+                    </kendo-chart-series-item-labels>
+                </kendo-chart-series-item>
+            </kendo-chart-series>
+            <kendo-chart-legend [visible]="false"></kendo-chart-legend>
+        </kendo-chart>
+    </div>
+</div>
+
+
+<input accept=".xlsx,.xls" type="file" onclick="value = null" (change)="onFileChange($event)" multiple="false"
+    #fileImport style="display: none;" />
+<div class="pb-3">
+    <button class="btn btn-primary" type="button" (click)="fileImport.click()">
+        <i class="intelicon-import-outlined"></i> Import Excel
+    </button>
+
+    <button [disabled]="isJvFileInvalid" class="btn btn-secondary mx-2" type="button" (click)="validateJVfile()">
+        <i class="intelicon-upload-to-cloud-outlined"></i>Validate Excel
+    </button>
+</div>
+<!-- <button kendoButton (click)="onSave(spreadsheet)" [svgIcon]="excelSVG">
+        Save
+    </button> -->
+
+<!-- <kendo-spreadsheet #spreadsheet [sheets]="sheets" activeSheet="Items" [menuItems]="items"
+    (excelImport)="onImport($event)" style="height: 400px; width: 100%">
+</kendo-spreadsheet> -->
+
+<kendo-grid #grid="kendoGrid" [kendoGridBinding]="rootData" [resizable]="true" [filterable]="true" [sortable]="true">
+    <kendo-grid-column *ngFor="let excelColumn of excelColumns;let i = index" [field]="excelColumn.column"
+        [width]="!i ? 100 : 150">
+        <ng-container *ngIf="excelColumn.column =='Start Date' || excelColumn.column =='End Date' ; else elseBlock">
+            <ng-template kendoGridCellTemplate let-dataItem>
+                <div [ngStyle]="{'color':dataItem[excelColumn.title +'-bgStyle']}">
+                    {{ dataItem[excelColumn.title] ? (dataItem[excelColumn.title] | date : 'MM/dd/yyyy') :
+                    dataItem[excelColumn.title +'-requiredMsg']}}
+                </div>
+            </ng-template>
+        </ng-container>
+        <ng-template kendoGridCellTemplate let-dataItem #elseBlock>
+            <div [ngStyle]="{'color':dataItem[excelColumn.title +'-bgStyle']}">
+                {{ dataItem[excelColumn.title] ? dataItem[excelColumn.title] :
+                dataItem[excelColumn.title +'-requiredMsg']}}
+            </div>
+        </ng-template>
+    </kendo-grid-column>
+</kendo-grid>
